@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Page</title>
+    <style>
+      /* CSS styles for page */
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+
+      #signup-form {
+        background-color: white;
+        width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+        border-top: #ffc801 5px solid;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #ccc;
+      }
+
+      input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: #ffc801;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .a1{
+        display: flex;
+        justify-items: space-between;
+      }
+      #last{
+        margin-left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="signup-form">
+      <h1>Responsive Resistation Form</h1>
+      <form method="post">
+        {% csrf_token %}
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password"  placeholder="Password" required>
+        <input type="password" id="password" name="password2" placeholder=" Re-Password" required>
+        <div class="a1"> 
+          <input type="text" id="name" name="firstname" placeholder="First name" required>
+          <input type="text" id="last" name="lastname" placeholder="Last name" required>
+        </div>
+        <label >Male:</label>
+        <input type="radio" id="" name="radio" required>
+        <label >Female:</label>
+        <input type="radio"  name="radio" required>
+        <br>
+        <dl>
+            <dd>
+                <select style="width: 350px; height: 40px;">
+                    <option value="cuntry">Select Your Cuntry</option>
+                    <option value="">India</option>
+                    <option value="">Us</option>
+                    <option value="">Canada</option>
+                    <option value="">England</option>
+                </select>
+            </dd>
+        </dl>
+        <br>
+        <input type="checkbox"  name="chack" >I agree with terms and conditions
+        <br>
+        <input type="checkbox"  name="chack" >I want to receive newsletter
+
+        <input type="submit" value="RESISTER">
+      </form>
+    </div>
+  </body>
+</html>
